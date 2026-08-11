@@ -29,26 +29,36 @@ jobs:
           path: ~/.npm
           key: npm-${{ runner.os }}-${{ hashFiles('**/package.json') }}
           restore-keys: npm-${{ runner.os }}-
-      - name: Install dependencies
-        run: npm ci
+      - name: Install (alerts/admin)
+        working-directory: alerts/admin
+        run: npm install
       - name: lint (alerts/admin)
         working-directory: alerts/admin
         run: npm run lint
       - name: build (alerts/admin)
         working-directory: alerts/admin
         run: npm run build
+      - name: Install (services/email/webmail)
+        working-directory: services/email/webmail
+        run: npm install
       - name: lint (services/email/webmail)
         working-directory: services/email/webmail
         run: npm run lint
       - name: build (services/email/webmail)
         working-directory: services/email/webmail
         run: npm run build
+      - name: Install (services/notifications/admin)
+        working-directory: services/notifications/admin
+        run: npm install
       - name: lint (services/notifications/admin)
         working-directory: services/notifications/admin
         run: npm run lint
       - name: build (services/notifications/admin)
         working-directory: services/notifications/admin
         run: npm run build
+      - name: Install (services/webhooks/admin)
+        working-directory: services/webhooks/admin
+        run: npm install
       - name: lint (services/webhooks/admin)
         working-directory: services/webhooks/admin
         run: npm run lint
