@@ -43,6 +43,8 @@ nextra::webhooks::DispatcherConfig loadCfg(const nlohmann::json& j)
                                  std::string{"X-Nextra-Signature"});
     c.timestampHeader = j.value("timestampHeader",
                                  std::string{"X-Nextra-Timestamp"});
+    c.eventHeader = j.value("eventHeader",
+                             std::string{"X-Nextra-Event"});
     return c;
 }
 }  // namespace

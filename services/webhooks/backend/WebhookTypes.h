@@ -32,6 +32,7 @@ struct DispatcherConfig
     std::chrono::milliseconds circuitCooldown{300000};
     std::string signatureHeader{"X-Nextra-Signature"};
     std::string timestampHeader{"X-Nextra-Timestamp"};
+    std::string eventHeader{"X-Nextra-Event"};
 };
 
 /// @brief Row claimed from webhook_deliveries for one delivery cycle.
